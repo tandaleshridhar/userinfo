@@ -1,0 +1,9 @@
+<div class="header-component-container">
+    <div class="header">
+        <mat-toolbar color="primary" class="example-toolbar">
+            <mat-form-field class="example-full-width">
+                <input #inputName matInput placeholder="Search..." (change)="findName(inputName.value); inputName.value=''">
+            </mat-form-field>
+        </mat-toolbar>
+    </div>
+</div>
