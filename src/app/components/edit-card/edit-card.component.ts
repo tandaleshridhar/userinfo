@@ -15,6 +15,6 @@ export class EditCardComponent implements OnInit {
   }
 
   saveCard() {
-    
+
   }
 }
