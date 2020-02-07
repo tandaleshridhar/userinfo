@@ -8,9 +8,9 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
+		"preinstall": "npm i -g json-server",
         "postinstall": "ng build --prod"
-    },
-    "preinstall": "npm i -g json-server",
+    },    
     "private": true,
     "dependencies": {
         "@angular/animations": "~8.2.5",
