@@ -15,11 +15,6 @@ export class CardComponent implements OnInit {
   constructor(private storageServiceService: StorageServiceService) { }
 
   ngOnInit() {
-    this.storageServiceService.watchStorage().subscribe((data: any) => {
-      // this will call whenever your localStorage data changes
-      // use localStorage code here and set your data here for ngFor
-      this.searchText = data;
-      });
   }
 
   editContact(card) {

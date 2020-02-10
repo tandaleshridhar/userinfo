@@ -16,11 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private userInfoService: UserInfoService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // console.logthis.route.snapshot.queryParamMap.get('firstName'));
-    // console.log(this.route.snapshot.paramMap.get('firstName'));
-    // console.log(this.route.snapshot.params.firstName);
-    this.route.queryParams.subscribe(params => { this.searchTerm = params.firstName; });
-    // this.searchTerm = this.route.queryParams.subscribe(params => params.firstName);
+    this.searchTerm = this.route.snapshot.params.firstName;
     console.log(this.searchTerm);
     this.userInfoService
       .getUserData()
