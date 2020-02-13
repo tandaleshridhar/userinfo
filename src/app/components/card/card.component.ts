@@ -8,7 +8,8 @@ import { StorageServiceService } from '../../storage-service.service';
 })
 export class CardComponent implements OnInit {
   @Input() cardArray: [];
-  searchText;
+  @Input() receivedSearchText: string;
+
   @Output() selectedCard = new EventEmitter();
   selectedContact: [];
 

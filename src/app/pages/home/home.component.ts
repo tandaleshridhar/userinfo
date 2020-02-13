@@ -11,13 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
   cardData: object;
   selectedCards: any;
-  searchTerm: any;
+  searchText: string = '';
 
   constructor(private userInfoService: UserInfoService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.searchTerm = this.route.snapshot.params.firstName;
-    console.log(this.searchTerm);
+    this.searchText = this.route.snapshot.params.firstName;
+    // console.log(this.searchTerm);
     this.userInfoService
       .getUserData()
       .subscribe(User => (this.cardData = User));
