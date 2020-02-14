@@ -1,33 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import * as exampleData from '../../db.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserInfoService {
-  private APIAllUsersUrl;
 
   constructor(public http: HttpClient) {
-    this.APIAllUsersUrl = 'http://localhost:3000/users';
+    this.getUserData().subscribe(data => {
+      console.log(data);
+    });
   }
 
-  public getUserData() {
-    return this.http.get(this.APIAllUsersUrl);
+  public getUserData(): Observable <any> {
+    return of(exampleData.users);
   }
 
   public getUserDataById(userId) {
-    return this.http.get(this.APIAllUsersUrl + userId);
+    return of(exampleData.users + userId);
   }
 
   public addNewUserData(user) {
-    return this.http.post(this.APIAllUsersUrl, user);
+    return of(exampleData.users, user);
   }
 
   public editUserDataById(user) {
-    return this.http.put(this.APIAllUsersUrl, user);
+    return of(exampleData.users, user);
   }
 
   public deleteUserDataById(user) {
-    return this.http.delete(this.APIAllUsersUrl + user);
+    return of(exampleData.users + user);
   }
 }
